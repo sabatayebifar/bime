@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Documents and Settings\a-sajadian\.IntelliJIdea12\bime\bime\src\model\organization.java" afterPath="$PROJECT_DIR$/src/model/Org2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="develope.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.jsp" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442060209386" ignored="false" />
-    <file path="/Dummy.txt" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442129876569" ignored="false" />
+    <file path="/Dummy.txt" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442129919975" ignored="false" />
     <file path="D:/sanam/src/com/bitarts/parsian/model/sanamTest.java" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442064424447" ignored="false" />
     <file path="/sanamTest.java" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442062571218" ignored="false" />
     <file path="D:/sanam/src/com/bitarts/parsian/model/Organization2.java" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442125268291" ignored="false" />
@@ -79,7 +78,7 @@
       <file leaf-file-name="Org2.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Org2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="19" selection-start="262" selection-end="262" vertical-scroll-proportion="0.5013405">
+            <state line="14" column="19" selection-start="262" selection-end="262" vertical-scroll-proportion="0.6380697">
               <folding />
             </state>
           </provider>
@@ -427,7 +426,11 @@
       <created>1442060249309</created>
       <updated>1442060249309</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="file Organization was changed">
+      <created>1442129922147</created>
+      <updated>1442129922147</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -574,7 +577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Org2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="262" selection-end="262" vertical-scroll-proportion="0.5013405">
+        <state line="14" column="19" selection-start="262" selection-end="262" vertical-scroll-proportion="0.6380697">
           <folding />
         </state>
       </provider>
