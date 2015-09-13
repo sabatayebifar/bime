@@ -7,7 +7,7 @@
     <ignored path="develope.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.jsp" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442057273090" ignored="false" />
-    <file path="/Dummy.txt" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442131198166" ignored="false" />
+    <file path="/Dummy.txt" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442131288263" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -433,7 +433,11 @@
       <created>1442131199792</created>
       <updated>1442131199792</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add organization&#10;">
+      <created>1442131289904</created>
+      <updated>1442131289904</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
