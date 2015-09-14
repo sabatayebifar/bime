@@ -49,6 +49,10 @@ public class Organization {
     @Column(name = "CreateTime")
     private String CreateTime;
 
+
+    public  Organization(){
+
+    }
     public Organization(
             Long OrganizationID   ,Long EconomicCode   ,  String OrgName    ,   int OrgType  ,
             int RegisterNo,  String Sheba ,  long AddressID  ,  long ContactID  , long ParentID  ,
