@@ -9,14 +9,6 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 
-/**
- * Created with IntelliJ IDEA.
- * User: a-sajadian
- * Date: 9/12/15
- * Time: 2:55 PM
- * To change this template use File | Settings | File Templates.
- */
-
 @Entity
 @Table(name = "Organization")
 public class Organization {
@@ -49,6 +41,10 @@ public class Organization {
     @Column(name = "CreateTime")
     private String CreateTime;
 
+
+    public  Organization(){
+
+    }
     public Organization(
             Long OrganizationID   ,Long EconomicCode   ,  String OrgName    ,   int OrgType  ,
             int RegisterNo,  String Sheba ,  long AddressID  ,  long ContactID  , long ParentID  ,
