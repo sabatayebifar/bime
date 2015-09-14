@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/Insured.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/InsuredParent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/model/SecondaryOrganization.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Organization.java" afterPath="$PROJECT_DIR$/src/model/Organization.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="develope.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.jsp" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442057273090" ignored="false" />
-    <file path="/Dummy.txt" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442217626909" ignored="false" />
+    <file path="/Dummy.txt" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442214824585" ignored="false" />
     <file path="F:/sanam/web/WEB-INF/application-context-connection.xml" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442211817443" ignored="false" />
     <file path="/Person.java" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442208596780" ignored="false" />
     <file path="/a.dummy" changelist="3ea93d3e-54dd-4a27-a037-1964d9e0cc5c" time="1442213829068" ignored="false" />
@@ -497,11 +501,7 @@
       <created>1442214831288</created>
       <updated>1442214831288</updated>
     </task>
-    <task id="LOCAL-00006" summary="Insured Added">
-      <created>1442217631346</created>
-      <updated>1442217631346</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -580,7 +580,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insured Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Role UserRole AgencyDate added&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -596,7 +596,6 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="add organization&#10;" />
     <MESSAGE value="Role UserRole AgencyDate added&#10;" />
-    <MESSAGE value="Insured Added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
