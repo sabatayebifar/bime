@@ -15,19 +15,20 @@ import javax.persistence.*;
 public class AgencyDate {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name="AgencyDateID", initialValue=1, allocationSize=100)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="AgencyDateID")
     @Column(name = "AgencyDateID")
     private  Long AgencyDateID;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "AgencyID")
     private Long  AgencyID ;
     @Column(name = "State")
-    private Long State;
+    private int State;
     @Column(name = "Description")
-    private Long Description;
+    private String Description;
     @Column(name = "ChangeDate")
-    private Long ChangeDate;
+    private int ChangeDate;
     @Column(name = "CreateUserID")
     private int CreateUserID;
     @Column(name = "CreateDate")
@@ -35,7 +36,7 @@ public class AgencyDate {
     @Column(name = "CreateTime")
     private String CreateTime;
 
-    public AgencyDate(Long agencyID, Long state, Long description, Long changeDate, int createUserID, String createDate, String createTime) {
+    public AgencyDate(Long agencyID, int state, String description, int changeDate, int createUserID, String createDate, String createTime) {
         AgencyID = agencyID;
         State = state;
         Description = description;
@@ -43,6 +44,9 @@ public class AgencyDate {
         CreateUserID = createUserID;
         CreateDate = createDate;
         CreateTime = createTime;
+    }
+
+    public AgencyDate() {
     }
 
     public Long getAgencyDateID() {
@@ -61,27 +65,27 @@ public class AgencyDate {
         AgencyID = agencyID;
     }
 
-    public Long getState() {
+    public int getState() {
         return State;
     }
 
-    public void setState(Long state) {
+    public void setState(int state) {
         State = state;
     }
 
-    public Long getDescription() {
+    public String getDescription() {
         return Description;
     }
 
-    public void setDescription(Long description) {
+    public void setDescription(String description) {
         Description = description;
     }
 
-    public Long getChangeDate() {
+    public int getChangeDate() {
         return ChangeDate;
     }
 
-    public void setChangeDate(Long changeDate) {
+    public void setChangeDate(int changeDate) {
         ChangeDate = changeDate;
     }
 

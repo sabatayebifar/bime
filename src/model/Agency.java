@@ -15,8 +15,6 @@ import javax.persistence.*;
 
 public class Agency {
     @Id
-    @SequenceGenerator(name="AgencyID", initialValue=1, allocationSize=100)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="AgencyID")
     @Column(name = "AgencyID")
     private Long AgencyID;
     @Column(name = "Name")
@@ -36,7 +34,7 @@ public class Agency {
     @Column(name = "FourDigitCode")
     private int FourDigitCode;
     @Column(name = "ActiveBeginDate")
-    private String ActiveBeginDate;
+    private int ActiveBeginDate;
     @Column(name = "CreateUserID")
     private int CreateUserID;
     @Column(name = "CreateDate")
@@ -44,8 +42,11 @@ public class Agency {
     @Column(name = "CreateTime")
     private String CreateTime;
 
+    public Agency() {
+    }
+
     public Agency(String name, long PID, long addressID, long contactID, int agencyType, int type, int state,
-                  int fourDigitCode, String activeBeginDate, int createUserID, String createDate, String createTime) {
+                  int fourDigitCode, int activeBeginDate, int createUserID, String createDate, String createTime) {
         Name          = name;
         this.PID      = PID;
         AddressID     = addressID;
@@ -132,11 +133,11 @@ public class Agency {
         FourDigitCode = fourDigitCode;
     }
 
-    public String getActiveBeginDate() {
+    public int getActiveBeginDate() {
         return ActiveBeginDate;
     }
 
-    public void setActiveBeginDate(String activeBeginDate) {
+    public void setActiveBeginDate(int activeBeginDate) {
         ActiveBeginDate = activeBeginDate;
     }
 

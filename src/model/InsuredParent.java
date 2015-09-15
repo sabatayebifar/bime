@@ -10,17 +10,17 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name= "InsuredParent")
+@Table(name= "OrganizationParent")
 public class InsuredParent {
     @Id
-    @SequenceGenerator(name="InsuredParentID", initialValue=1, allocationSize=100)
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="InsuredParentID")
-    @Column(name = "InsuredParentID")
+    @SequenceGenerator(name="OrganizationParentID", initialValue=1, allocationSize=100)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="OrganizationParentID")
+    @Column(name = "OrganizationParentID")
     private Long InsuredParentID;
     @Column(name = "Name")
     private Long Name;
     @Column(name = "Description")
-    private int Description;
+    private String Description;
     @Column(name = "CreateUserID")
     private int CreateUserID;
     @Column(name = "CreateDate")
@@ -32,7 +32,7 @@ public class InsuredParent {
 
     }
 
-    public InsuredParent(Long name, int description, int createUserID, String createDate, String createTime) {
+    public InsuredParent(Long name, String description, int createUserID, String createDate, String createTime) {
         Name = name;
         Description = description;
         CreateUserID = createUserID;
@@ -56,11 +56,11 @@ public class InsuredParent {
         Name = name;
     }
 
-    public int getDescription() {
+    public String getDescription() {
         return Description;
     }
 
-    public void setDescription(int description) {
+    public void setDescription(String description) {
         Description = description;
     }
 

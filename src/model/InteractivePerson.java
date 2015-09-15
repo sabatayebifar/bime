@@ -13,12 +13,16 @@ import javax.persistence.*;
 @Table(name = "InteractivePerson")
 public class InteractivePerson {
     @Id
-    @SequenceGenerator(name="NationalID", initialValue=1, allocationSize=100)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="NationalID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "NationalID")
     @Column(name = "NationalID")
     private Long NationalID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "OrganizationID")
     @Column(name = "OrganizationID")
     private long OrganizationID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SecondaryID")
     @Column(name = "SecondaryID")
     private long SecondaryID;
     @Column(name = "CreateUserID")

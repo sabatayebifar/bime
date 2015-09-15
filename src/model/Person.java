@@ -13,8 +13,6 @@ import javax.persistence.*;
 public class Person {
 
     @Id
-    @SequenceGenerator(name="PersonID", initialValue=1, allocationSize=100)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PersonID")
     @Column(name = "PersonID")
     private Long PersonID;
     @Column(name = "NationalID")
@@ -43,8 +41,8 @@ public class Person {
     private int IDNo;
     @Column(name = "Degree")
     private int Degree;
-    @Column(name = "UserID")
-    private int UserID;
+    @Column(name = "CreateUserID")
+    private int CreateUserID;
     @Column(name = "AddressID")
     private Long AddressID;
     @Column(name = "ContactID")
@@ -81,7 +79,7 @@ public class Person {
         this.GregorianBirthDate     = GregorianBirthDate;
         this.IDNo                   = IDNo;
         this.Degree                 = Degree;
-        this.UserID                 = UserID;
+        this.CreateUserID           = UserID;
         this.AddressID              = AddressID;
         this.ContactID              = ContactID;
         this.Sheba                  = Sheba;
@@ -195,12 +193,12 @@ public class Person {
         this.Degree = Degree;
     }
 
-    public int getUserID() {
-        return UserID;
+    public int getCreateUserID() {
+        return CreateUserID;
     }
 
-    public void setUserID(int UserID) {
-        this.UserID = UserID;
+    public void setCreateUserID(int UserID) {
+        this.CreateUserID = UserID;
     }
 
     public Long getAddressID() {

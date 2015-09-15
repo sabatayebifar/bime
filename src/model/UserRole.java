@@ -19,12 +19,12 @@ public class UserRole {
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="UserRoleID")
     @Column(name = "UserRoleID")
     private Long UserRoleID;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "RoleID")
-    private Long RoleID;
-    @ManyToOne(fetch = FetchType.EAGER)
+    private Role RoleID;
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserID")
-    private int UserID;
+    private Users UserID;
     @Column(name = "CreateUserID")
     private int CreateUserID;
     @Column(name = "CreateDate")
@@ -33,20 +33,13 @@ public class UserRole {
     private String CreateTime;
 
     public UserRole(){}
-    public UserRole(Long userRoleID, int userID, int createUserID, String createDate, String createTime) {
-        UserRoleID      = userRoleID;
-        UserID          = userID;
-        CreateUserID    = createUserID;
-        CreateDate      = createDate;
-        CreateTime      = createTime;
-    }
 
-    public Long getRoleID() {
-        return RoleID;
-    }
-
-    public void setRoleID(Long roleID) {
+    public UserRole(Role roleID, Users userID, int createUserID, String createDate, String createTime) {
         RoleID = roleID;
+        UserID = userID;
+        CreateUserID = createUserID;
+        CreateDate = createDate;
+        CreateTime = createTime;
     }
 
     public Long getUserRoleID() {
@@ -57,11 +50,19 @@ public class UserRole {
         UserRoleID = userRoleID;
     }
 
-    public int getUserID() {
+    public Role getRoleID() {
+        return RoleID;
+    }
+
+    public void setRoleID(Role roleID) {
+        RoleID = roleID;
+    }
+
+    public Users getUserID() {
         return UserID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(Users userID) {
         UserID = userID;
     }
 
@@ -88,5 +89,4 @@ public class UserRole {
     public void setCreateTime(String createTime) {
         CreateTime = createTime;
     }
-
 }

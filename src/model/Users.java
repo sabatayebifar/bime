@@ -13,50 +13,44 @@ import javax.persistence.*;
 @Table(name = "Users")
 public class Users {
     @Id
-    @SequenceGenerator(name="UserID", initialValue=1, allocationSize=100)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="UserID")
     @Column(name = "UserID")
-    private Long UserID;
+    private int UserID;
     @Column(name = "UserName")
     private String UserName;
     @Column(name = "Password")
     private String Password;
     @Column(name = "Type")
     private int Type;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "AgencyID")
-    private long AgencyID;
+    private Agency AgencyID;
     @Column(name = "State")
     private int State;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "PlaceID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "AgencyID")
     private long PlaceID;
-    @Column(name = "CreateUserID")
+    @Column(name = "" +
+            "")
     private int CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
     private String CreateTime;
 
-    public Users(
-            Long UserID   ,String UserName   ,  String Password    ,   int Type  ,
-            long AgencyID,  int State ,  long PlaceID  ,
-            int CreateUserID , String CreateDate ,  String CreateTime ){
-
-        this.UserID       = UserID;
-        this.UserName     = UserName;
-        this.Password     = Password;
-        this.Type         = Type;
-        this.AgencyID     = AgencyID;
-        this.State        = State;
-        this.PlaceID      = PlaceID;
-        this.CreateUserID = CreateUserID;
-        this.CreateDate   = CreateDate;
-        this.CreateTime   = CreateTime;
-
+    public Users(int userID, String userName, String password, int type, Agency agencyID, int state, long placeID, int createUserID, String createDate, String createTime) {
+        UserID = userID;
+        UserName = userName;
+        Password = password;
+        Type = type;
+        AgencyID = agencyID;
+        State = state;
+        PlaceID = placeID;
+        CreateUserID = createUserID;
+        CreateDate = createDate;
+        CreateTime = createTime;
     }
 
-    public Long getUserID() {
+    public int getUserID() {
         return UserID;
     }
 
@@ -72,7 +66,7 @@ public class Users {
         return Type;
     }
 
-    public long getAgencyID() {
+    public Agency getAgencyID() {
         return AgencyID;
     }
 
@@ -116,7 +110,7 @@ public class Users {
         State = state;
     }
 
-    public void setAgencyID(long agencyID) {
+    public void setAgencyID(Agency agencyID) {
         AgencyID = agencyID;
     }
 
@@ -128,7 +122,7 @@ public class Users {
         Password = password;
     }
 
-    public void setUserID(Long userID) {
+    public void setUserID(int userID) {
         UserID = userID;
     }
 

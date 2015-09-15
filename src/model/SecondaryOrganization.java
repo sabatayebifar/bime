@@ -19,7 +19,7 @@ public class SecondaryOrganization {
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="SecondaryID")
     @Column(name = "SecondaryID")
     private Long SecondaryID;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "OrganizationID")
     private Long OrganizationID;
     @Column(name = "SecondaryName")
