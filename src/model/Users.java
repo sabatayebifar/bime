@@ -29,15 +29,15 @@ public class Users {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "AgencyID")
     private long PlaceID;
-    @Column(name = "" +
-            "")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
     private String CreateTime;
 
-    public Users(int userID, String userName, String password, int type, Agency agencyID, int state, long placeID, int createUserID, String createDate, String createTime) {
+    public Users(int userID, String userName, String password, int type, Agency agencyID, int state, long placeID, Users createUserID, String createDate, String createTime) {
         UserID = userID;
         UserName = userName;
         Password = password;
@@ -78,7 +78,7 @@ public class Users {
         return PlaceID;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
@@ -98,7 +98,7 @@ public class Users {
         CreateDate = createDate;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 

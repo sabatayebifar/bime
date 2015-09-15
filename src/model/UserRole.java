@@ -25,8 +25,9 @@ public class UserRole {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserID")
     private Users UserID;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
@@ -34,7 +35,7 @@ public class UserRole {
 
     public UserRole(){}
 
-    public UserRole(Role roleID, Users userID, int createUserID, String createDate, String createTime) {
+    public UserRole(Role roleID, Users userID, Users createUserID, String createDate, String createTime) {
         RoleID = roleID;
         UserID = userID;
         CreateUserID = createUserID;
@@ -66,11 +67,11 @@ public class UserRole {
         UserID = userID;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 

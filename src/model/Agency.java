@@ -35,8 +35,9 @@ public class Agency {
     private int FourDigitCode;
     @Column(name = "ActiveBeginDate")
     private int ActiveBeginDate;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
@@ -46,7 +47,7 @@ public class Agency {
     }
 
     public Agency(String name, long PID, long addressID, long contactID, int agencyType, int type, int state,
-                  int fourDigitCode, int activeBeginDate, int createUserID, String createDate, String createTime) {
+                  int fourDigitCode, int activeBeginDate, Users createUserID, String createDate, String createTime) {
         Name          = name;
         this.PID      = PID;
         AddressID     = addressID;
@@ -141,11 +142,11 @@ public class Agency {
         ActiveBeginDate = activeBeginDate;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 

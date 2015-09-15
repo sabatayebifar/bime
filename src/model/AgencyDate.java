@@ -22,21 +22,23 @@ public class AgencyDate {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "AgencyID")
-    private Long  AgencyID ;
+    private Agency  AgencyID ;
     @Column(name = "State")
     private int State;
     @Column(name = "Description")
     private String Description;
     @Column(name = "ChangeDate")
     private int ChangeDate;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
     private String CreateTime;
 
-    public AgencyDate(Long agencyID, int state, String description, int changeDate, int createUserID, String createDate, String createTime) {
+    public AgencyDate(Agency agencyID, int state, String description, int changeDate,
+                      Users createUserID, String createDate, String createTime) {
         AgencyID = agencyID;
         State = state;
         Description = description;
@@ -57,11 +59,11 @@ public class AgencyDate {
         AgencyDateID = agencyDateID;
     }
 
-    public Long getAgencyID() {
+    public Agency getAgencyID() {
         return AgencyID;
     }
 
-    public void setAgencyID(Long agencyID) {
+    public void setAgencyID(Agency agencyID) {
         AgencyID = agencyID;
     }
 
@@ -89,11 +91,11 @@ public class AgencyDate {
         ChangeDate = changeDate;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 

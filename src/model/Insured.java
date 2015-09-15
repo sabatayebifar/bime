@@ -20,7 +20,7 @@ public class Insured {
     private Long InsuredID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PersonID")
-    private Long PersonID;
+    private Person PersonID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "OrganizationID")
     private Long OrganizationID;
@@ -32,8 +32,9 @@ public class Insured {
     private Long ContactID;
     @Column(name = "Description")
     private String Description;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
@@ -43,7 +44,8 @@ public class Insured {
 
     }
 
-    public Insured(Long personID, Long organizationID, int insuredType, Long addressID, Long contactID, String description, int createUserID, String createDate, String createTime) {
+    public Insured(Person personID, Long organizationID, int insuredType, Long addressID, Long contactID, String description,
+                   Users createUserID, String createDate, String createTime) {
         PersonID = personID;
         OrganizationID = organizationID;
         InsuredType = insuredType;
@@ -63,11 +65,11 @@ public class Insured {
         InsuredID = insuredID;
     }
 
-    public Long getPersonID() {
+    public Person getPersonID() {
         return PersonID;
     }
 
-    public void setPersonID(Long personID) {
+    public void setPersonID(Person personID) {
         PersonID = personID;
     }
 
@@ -111,11 +113,11 @@ public class Insured {
         Description = description;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 

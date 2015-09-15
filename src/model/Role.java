@@ -27,8 +27,9 @@ public class Role {
     private String LatinName;
     @Column(name = "SubSystemID")
     private int SubSystemID;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
@@ -39,7 +40,7 @@ public class Role {
 
     public Role(
             Long RoleID   ,String RoleName   ,  int RoleAccessID    ,   String LatinName  ,
-            int SubsystemID,  int CreateUSerID , String CreateDate , String CreateTime
+            int SubsystemID,  Users CreateUSerID , String CreateDate , String CreateTime
     ){
 
         this.RoleID                 = RoleID;
@@ -69,7 +70,7 @@ public class Role {
         return SubSystemID;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
@@ -101,7 +102,7 @@ public class Role {
         SubSystemID = subSystemID;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 

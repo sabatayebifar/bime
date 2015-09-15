@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name= "OrganizationParent")
-public class InsuredParent {
+public class OrganizationParent {
     @Id
     @SequenceGenerator(name="OrganizationParentID", initialValue=1, allocationSize=100)
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="OrganizationParentID")
@@ -21,18 +21,19 @@ public class InsuredParent {
     private Long Name;
     @Column(name = "Description")
     private String Description;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
     private String CreateTime;
 
-    public InsuredParent(){
+    public OrganizationParent(){
 
     }
 
-    public InsuredParent(Long name, String description, int createUserID, String createDate, String createTime) {
+    public OrganizationParent(Long name, String description, Users createUserID, String createDate, String createTime) {
         Name = name;
         Description = description;
         CreateUserID = createUserID;
@@ -64,11 +65,11 @@ public class InsuredParent {
         Description = description;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 

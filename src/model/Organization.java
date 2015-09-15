@@ -32,10 +32,13 @@ public class Organization {
     private long AddressID;
     @Column(name = "ContactID")
     private long ContactID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "OrganizationParentID")
     @Column(name = "ParentID")
-    private long ParentID;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    private OrganizationParent ParentID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
@@ -45,104 +48,114 @@ public class Organization {
     public  Organization(){
 
     }
-    public Organization(
-            Long OrganizationID   ,Long EconomicCode   ,  String OrgName    ,   int OrgType  ,
-            int RegisterNo,  String Sheba ,  long AddressID  ,  long ContactID  , long ParentID  ,
-            int CreateUserID , String CreateDate ,  String CreateTime ){
 
-        this.OrganizationID       = OrganizationID;
-        this.EconomicCode         = EconomicCode;
-        this.OrgName              = OrgName;
-        this.OrgType              = OrgType;
-        this.RegisterNo           = RegisterNo;
-        this.Sheba                = Sheba;
-        this.AddressID            = AddressID;
-        this.ContactID            = ContactID;
-        this.ParentID             = ParentID;
-        this.CreateUserID         = CreateUserID;
-        this.CreateDate           = CreateDate;
-        this.CreateTime           = CreateTime;
-
+    public Organization(Long economicCode, String orgName, int orgType, int registerNo, String sheba, long addressID, long contactID, OrganizationParent parentID, Users createUserID, String createDate, String createTime) {
+        EconomicCode = economicCode;
+        OrgName = orgName;
+        OrgType = orgType;
+        RegisterNo = registerNo;
+        Sheba = sheba;
+        AddressID = addressID;
+        ContactID = contactID;
+        ParentID = parentID;
+        CreateUserID = createUserID;
+        CreateDate = createDate;
+        CreateTime = createTime;
     }
 
-    public Long getId() {
+    public Long getOrganizationID() {
         return OrganizationID;
     }
 
-    public void setId(Long id) {
-        this.OrganizationID = id;
+    public void setOrganizationID(Long organizationID) {
+        OrganizationID = organizationID;
     }
 
-    public long getEconomicCode(){
+    public Long getEconomicCode() {
         return EconomicCode;
     }
-    public void setEconomicCode(long EconomicCode){
-        this.EconomicCode = EconomicCode;
+
+    public void setEconomicCode(Long economicCode) {
+        EconomicCode = economicCode;
     }
-    public String getOrgName(){
+
+    public String getOrgName() {
         return OrgName;
     }
-    public void setOrgName(String OrgName){
-        this.OrgName = OrgName;
+
+    public void setOrgName(String orgName) {
+        OrgName = orgName;
     }
-    public int getOrgType(){
+
+    public int getOrgType() {
         return OrgType;
     }
-    public void setOrgType(int OrgType){
-        this.OrgType = OrgType;
+
+    public void setOrgType(int orgType) {
+        OrgType = orgType;
     }
-    public int getRegisterNo(){
+
+    public int getRegisterNo() {
         return RegisterNo;
     }
-    public void setRegisterNo(int RegisterNo){
-        this.RegisterNo = RegisterNo;
+
+    public void setRegisterNo(int registerNo) {
+        RegisterNo = registerNo;
     }
-    public String getSheba(){
+
+    public String getSheba() {
         return Sheba;
     }
-    public void setSheba(String Sheba){
-        this.Sheba = Sheba;
+
+    public void setSheba(String sheba) {
+        Sheba = sheba;
     }
-    public Long getAddressID() {
+
+    public long getAddressID() {
         return AddressID;
     }
 
-    public void setAddressID(Long AddressID) {
-        this.AddressID = AddressID;
+    public void setAddressID(long addressID) {
+        AddressID = addressID;
     }
-    public Long getContactID() {
+
+    public long getContactID() {
         return ContactID;
     }
 
-    public void setContactID(Long ContactID) {
-        this.AddressID = ContactID;
+    public void setContactID(long contactID) {
+        ContactID = contactID;
     }
-    public Long getParentID() {
+
+    public OrganizationParent getParentID() {
         return ParentID;
     }
 
-    public void setParentID(Long ParentID) {
-        this.ParentID = ParentID;
+    public void setParentID(OrganizationParent parentID) {
+        ParentID = parentID;
     }
-    public int getCreateUserID(){
+
+    public Users getCreateUserID() {
         return CreateUserID;
     }
-    public void setCreateUserID(int CreateUserID){
-        this.CreateUserID = CreateUserID;
+
+    public void setCreateUserID(Users createUserID) {
+        CreateUserID = createUserID;
     }
 
-    public String getCreateDate(){
+    public String getCreateDate() {
         return CreateDate;
     }
-    public void setCreateDate(String CreateDate){
-        this.CreateDate = CreateDate;
+
+    public void setCreateDate(String createDate) {
+        CreateDate = createDate;
     }
 
-    public String getCreateTime(){
+    public String getCreateTime() {
         return CreateTime;
     }
-    public void setCreateTime(String CreateTime){
-        this.CreateTime = CreateTime;
-    }
 
+    public void setCreateTime(String createTime) {
+        CreateTime = createTime;
+    }
 }

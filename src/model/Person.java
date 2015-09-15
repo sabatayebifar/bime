@@ -41,8 +41,9 @@ public class Person {
     private int IDNo;
     @Column(name = "Degree")
     private int Degree;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "AddressID")
     private Long AddressID;
     @Column(name = "ContactID")
@@ -61,7 +62,7 @@ public class Person {
             Long PersonID   ,Long NationalID   ,  int Nationality    ,   String Name  ,
             String Family,  String FatherName ,  String LatinName  ,  int JobID, int Gender
             ,int BirthCityID ,int PersianBirthDate , int GregorianBirthDate ,
-            int IDNo , int Degree ,  int UserID ,long AddressID , long ContactID , String Sheba
+            int IDNo , int Degree ,  Users UserID ,long AddressID , long ContactID , String Sheba
             , String CreateDate , String CreateTime
     ){
 
@@ -193,11 +194,11 @@ public class Person {
         this.Degree = Degree;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
-    public void setCreateUserID(int UserID) {
+    public void setCreateUserID(Users UserID) {
         this.CreateUserID = UserID;
     }
 

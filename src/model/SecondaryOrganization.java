@@ -21,13 +21,14 @@ public class SecondaryOrganization {
     private Long SecondaryID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "OrganizationID")
-    private Long OrganizationID;
+    private Organization OrganizationID;
     @Column(name = "SecondaryName")
     private String SecondaryName;
     @Column(name = "Description")
     private String Description;
-    @Column(name = "CreateUserID")
-    private int CreateUserID;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CreateUserID")
+    private Users CreateUserID;
     @Column(name = "CreateDate")
     private String CreateDate;
     @Column(name = "CreateTime")
@@ -35,7 +36,7 @@ public class SecondaryOrganization {
 
     public SecondaryOrganization(){}
 
-    public SecondaryOrganization(Long organizationID, String secondaryName, String description, int createUserID, String createDate, String createTime) {
+    public SecondaryOrganization(Organization organizationID, String secondaryName, String description, Users createUserID, String createDate, String createTime) {
         OrganizationID = organizationID;
         SecondaryName = secondaryName;
         Description = description;
@@ -52,11 +53,11 @@ public class SecondaryOrganization {
         SecondaryID = secondaryID;
     }
 
-    public Long getOrganizationID() {
+    public Organization getOrganizationID() {
         return OrganizationID;
     }
 
-    public void setOrganizationID(Long organizationID) {
+    public void setOrganizationID(Organization organizationID) {
         OrganizationID = organizationID;
     }
 
@@ -76,11 +77,11 @@ public class SecondaryOrganization {
         Description = description;
     }
 
-    public int getCreateUserID() {
+    public Users getCreateUserID() {
         return CreateUserID;
     }
 
-    public void setCreateUserID(int createUserID) {
+    public void setCreateUserID(Users createUserID) {
         CreateUserID = createUserID;
     }
 
